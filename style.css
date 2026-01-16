@@ -1,0 +1,129 @@
+/* ===== BASE STYLES ===== */
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0f172a; /* eye-soothing dark */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: env(safe-area-inset-top)
+             env(safe-area-inset-right)
+             env(safe-area-inset-bottom)
+             env(safe-area-inset-left);
+}
+
+.container {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    padding: 25px;
+    border-radius: 18px;
+    width: 360px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+/* ===== MODE SELECTOR ===== */
+.mode-selector {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.mode-selector label {
+    cursor: pointer;
+}
+
+/* ===== SCOREBOARD ===== */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* ===== GAME BOARD ===== */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.tile {
+    height: 95px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 12px;
+    font-size: 2.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Hover (desktop) */
+.tile:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+/* Active (mobile tap feedback) */
+.tile:active {
+    transform: scale(0.95);
+}
+
+/* Player colors */
+.tile.X { color: #38bdf8; }
+.tile.O { color: #fb7185; }
+
+/* Win highlight */
+.tile.win {
+    background: #2ecc71 !important;
+    color: black;
+    animation: pulse 0.8s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* ===== BUTTON ===== */
+button {
+    margin-top: 12px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background: #00cec9;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 420px) {
+    .container {
+        width: 95%;
+        padding: 18px;
+    }
+
+    .tile {
+        height: 22vw;
+        font-size: 2.2rem;
+    }
+
+    .game-board {
+        gap: 6px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .scoreboard,
+    .mode-selector {
+        font-size: 0.85rem;
+    }
+}

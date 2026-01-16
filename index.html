@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Tic Tac Toe</h1>
+
+    <!-- 🔼 ADDED: MODE SELECTOR -->
+    <div class="mode-selector">
+        <label>
+            <input type="radio" name="mode" value="HUMAN" checked>
+            Play with Friend
+        </label>
+        <label>
+            <input type="radio" name="mode" value="AI">
+            Play with Computer
+        </label>
+    </div>
+
+    <!-- EXISTING SCOREBOARD -->
+    <div class="scoreboard">
+        <div>X Wins: <span id="xScore">0</span></div>
+        <div>O Wins: <span id="oScore">0</span></div>
+        <div>Draws: <span id="drawScore">0</span></div>
+    </div>
+
+    <!-- EXISTING BOARD -->
+    <div class="game-board">
+        <div class="tile" data-index="0"></div>
+        <div class="tile" data-index="1"></div>
+        <div class="tile" data-index="2"></div>
+        <div class="tile" data-index="3"></div>
+        <div class="tile" data-index="4"></div>
+        <div class="tile" data-index="5"></div>
+        <div class="tile" data-index="6"></div>
+        <div class="tile" data-index="7"></div>
+        <div class="tile" data-index="8"></div>
+    </div>
+
+    <div class="announcer hide"></div>
+
+    <button id="reset">Restart Game</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
