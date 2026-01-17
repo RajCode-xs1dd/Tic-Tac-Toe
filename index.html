@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Tic Tac Toe Pro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Tic Tac Toe Pro – Unbeatable AI Game</title>
+
+    <meta name="description"
+        content="Play Tic Tac Toe against an unbeatable AI that learns from your mistakes. Same trick won’t work twice. Built with JavaScript by RajCode.">
+    <meta name="keywords"
+        content="tic tac toe ai, unbeatable tic tac toe, javascript game, ai game, minimax tic tac toe, web game, rajcode">
+    <meta name="author" content="RajCode">
+
+    <!-- Theme Color (Mobile browser UI) -->
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:title" content="Tic Tac Toe Pro – Unbeatable AI">
+    <meta property="og:description"
+        content="Try to beat an AI that learns and never repeats losing moves. Same trick won’t work twice.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rajcode-xs1dd.github.io/Tic-Tac-Toe/">
+    <meta property="og:image" content="https://rajcode-xs1dd.github.io/Tic-Tac-Toe/preview.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tic Tac Toe Pro – Unbeatable AI">
+    <meta name="twitter:description"
+        content="An AI-powered Tic Tac Toe game that adapts and never falls for the same trick twice.">
+    <meta name="twitter:image" content="https://rajcode-xs1dd.github.io/Tic-Tac-Toe/preview.png">
+
+    <!-- Mobile Web App -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tic Tac Toe Pro">
+
+    <!-- Favicon (optional but recommended) -->
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Tic Tac Toe</h1>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
 
-    <!-- 🔼 ADDED: MODE SELECTOR -->
-    <div class="mode-selector">
-        <label>
-            <input type="radio" name="mode" value="HUMAN" checked>
-            Play with Friend
-        </label>
-        <label>
-            <input type="radio" name="mode" value="AI">
-            Play with Computer
-        </label>
+        <!-- MODE SELECTOR -->
+        <div class="mode-selector">
+            <button id="aiModeBtn" class="active">🤖 Computer</button>
+            <button id="humanModeBtn">👥 Friend</button>
+        </div>
+
+        <!-- SCOREBOARD -->
+        <div class="scoreboard">
+            <div>X Wins: <span id="xScore">0</span></div>
+            <div>O Wins: <span id="oScore">0</span></div>
+            <div>Draws: <span id="drawScore">0</span></div>
+        </div>
+
+        <!-- GAME BOARD -->
+        <div class="game-board">
+            <div class="tile" data-index="0"></div>
+            <div class="tile" data-index="1"></div>
+            <div class="tile" data-index="2"></div>
+            <div class="tile" data-index="3"></div>
+            <div class="tile" data-index="4"></div>
+            <div class="tile" data-index="5"></div>
+            <div class="tile" data-index="6"></div>
+            <div class="tile" data-index="7"></div>
+            <div class="tile" data-index="8"></div>
+        </div>
+
+        <div class="announcer hide"></div>
+
+        <button id="reset">Replay Game</button>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            Made with ❤️ by <strong>RajCode</strong>
+        </footer>
     </div>
 
-    <!-- EXISTING SCOREBOARD -->
-    <div class="scoreboard">
-        <div>X Wins: <span id="xScore">0</span></div>
-        <div>O Wins: <span id="oScore">0</span></div>
-        <div>Draws: <span id="drawScore">0</span></div>
-    </div>
-
-    <!-- EXISTING BOARD -->
-    <div class="game-board">
-        <div class="tile" data-index="0"></div>
-        <div class="tile" data-index="1"></div>
-        <div class="tile" data-index="2"></div>
-        <div class="tile" data-index="3"></div>
-        <div class="tile" data-index="4"></div>
-        <div class="tile" data-index="5"></div>
-        <div class="tile" data-index="6"></div>
-        <div class="tile" data-index="7"></div>
-        <div class="tile" data-index="8"></div>
-    </div>
-
-    <div class="announcer hide"></div>
-
-    <button id="reset">Restart Game</button>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

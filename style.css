@@ -1,4 +1,6 @@
-/* ===== BASE STYLES ===== */
+/* ======================================================
+   BASE STYLES
+====================================================== */
 body {
     margin: 0;
     height: 100vh;
@@ -24,19 +26,40 @@ body {
     text-align: center;
 }
 
-/* ===== MODE SELECTOR ===== */
+/* ======================================================
+   MODE SELECTOR
+====================================================== */
 .mode-selector {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 12px;
-    font-weight: 500;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.mode-selector label {
+.mode-selector button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
     cursor: pointer;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-weight: 600;
+    transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ===== SCOREBOARD ===== */
+.mode-selector button:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.mode-selector button.active {
+    background: #38bdf8;
+    color: #000;
+    box-shadow: 0 0 0 2px rgba(56,189,248,0.6);
+}
+
+/* ======================================================
+   SCOREBOARD
+====================================================== */
 .scoreboard {
     display: flex;
     justify-content: space-between;
@@ -44,13 +67,18 @@ body {
     font-weight: 600;
 }
 
-/* ===== GAME BOARD ===== */
+/* ======================================================
+   GAME BOARD
+====================================================== */
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 }
 
+/* ======================================================
+   GAME TILE
+====================================================== */
 .tile {
     height: 95px;
     background: rgba(255,255,255,0.18);
@@ -61,6 +89,11 @@ body {
     align-items: center;
     cursor: pointer;
     transition: all 0.25s ease;
+
+    /* Touch & UX polish */
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 /* Hover (desktop) */
@@ -84,13 +117,18 @@ body {
     animation: pulse 0.8s infinite;
 }
 
+/* ======================================================
+   WIN ANIMATION
+====================================================== */
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
     100% { transform: scale(1); }
 }
 
-/* ===== BUTTON ===== */
+/* ======================================================
+   ACTION BUTTON (RESET)
+====================================================== */
 button {
     margin-top: 12px;
     padding: 10px;
@@ -102,7 +140,19 @@ button {
     cursor: pointer;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* ======================================================
+   FOOTER
+====================================================== */
+.footer {
+    margin-top: 14px;
+    font-size: 0.75rem;
+    opacity: 0.75;
+    text-align: center;
+}
+
+/* ======================================================
+   MOBILE RESPONSIVE
+====================================================== */
 @media (max-width: 420px) {
     .container {
         width: 95%;
